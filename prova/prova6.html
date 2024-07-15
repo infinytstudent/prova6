@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<input id="inputm" type="text">:massa
+<input id="inputa" type="text">:altura
+<button onclick="calcularimc()">calcular imc</button>
+<h3>digite sua massa em quilos e sua altura em centímetros</h3>
+<p id="p"></p>
+
+    <script>
+function calcularimc(){
+let massa = document.getElementById('inputm')
+let altura = document.getElementById('inputa')
+let altura2 = altura/100
+let imc = massa/(altura2*altura2)
+let imc2 = imc.toFixed(1)
+let texto = document.getElementById('p')
+let tipoimc
+if(imc<=16){tipoimc = "baixo peso muito grave"}
+else if(imc<=17){tipoimc = "baixo peso grave"}
+else if(imc<=18.5){tipoimc = "baixo peso"}
+else if(imc<=25){tipoimc = "peso normal"}
+else if(imc<=30){tipoimc = "sobrepeso"}
+else if(imc<=35){tipoimc = "obesidade de grau I"}
+else if(imc<=40){tipoimc = "obesidade de grau II"}
+else if(imc=>40){tipoimc = "obesidade de grau III"}
+let resultado = ("você tem "+tipoimc)
+texto.textContent=resultado}
+    </script>
+</body>
+</html>
